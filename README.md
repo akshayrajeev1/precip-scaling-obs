@@ -18,7 +18,7 @@ It focuses on merged satellite-derived precipitation datasets to explore how coa
 ## 📥 Getting Started
 
 ```bash
-git clone https://github.com/yourusername/scaling-precip-obs.git
+git clone https://github.com/akshayrajeev1/scaling-precip-obs.git
 cd scaling-precip-obs
 conda env create -f environment.yml
 conda activate spatial-scaling
@@ -40,4 +40,4 @@ conda activate spatial-scaling
 
 ## 📄 Citation
 
-> Rajeev and Pendergrass (In Prep). Observed spatial scaling of the intensity distribution of rain.
+> Rajeev and Pendergrass (In Prep). "Observed spatial scaling of the intensity distribution of rain".
