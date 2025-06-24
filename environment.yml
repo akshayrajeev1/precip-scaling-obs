@@ -1,0 +1,15 @@
+name: scaling-env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - xarray
+  - matplotlib
+  - seaborn
+  - netCDF4
+  - jupyterlab
+  - dask
+  - xesmf
+  - cartopy
