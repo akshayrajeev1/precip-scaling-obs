@@ -1,7 +1,7 @@
 # Spatial scaling of precipitation – Observational Analysis
 
 This repository contains data, code, and analysis for the observation-based component of the study:
-**"How Spatial Resolution Affects Rainfall Distributions"**
+**"Observed spatial scaling of the intensity distribution of rain"**
 
 It focuses on merged satellite-derived precipitation datasets to explore how coarsening spatial resolution influences rainfall amount distributions.
 
@@ -9,7 +9,7 @@ It focuses on merged satellite-derived precipitation datasets to explore how coa
 
 ```
 .
-├── data/               # Instructions or links to observational data (e.g., GPM, IMERG)
+├── data/               # Processed data for plotting (rain amount distributions, shift map etc.)
 ├── notebooks/          # Jupyter notebooks for exploratory analysis and visualization
 ├── scripts/            # Python scripts for processing and statistical analysis
 ├── figs/               # Figures used in the publication
