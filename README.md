@@ -10,7 +10,7 @@ It focuses on merged satellite-derived precipitation datasets to explore how coa
 ```
 .
 ├── data/               # Processed data for plotting (rain amount distributions, shift map etc.)
-├── notebooks/          # Jupyter notebooks for exploratory analysis and visualization
+├── notebooks/          # Jupyter notebooks for visualization of results
 ├── scripts/            # Python scripts for processing and statistical analysis
 ├── figs/               # Figures used in the publication
 ```
@@ -40,4 +40,4 @@ conda activate spatial-scaling
 
 ## 📄 Citation
 
-> Rajeev and Pendergrass (In Prep). "Observed spatial scaling of the intensity distribution of rain".
+> Rajeev & Pendergrass (In Prep). "Observed spatial scaling of the intensity distribution of rain".
