@@ -4,6 +4,5 @@ __pycache__/
 .DS_Store
 .env
 .envrc
-*.nc
 *.h5
 *.zip
