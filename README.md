@@ -40,4 +40,4 @@ conda activate spatial-scaling
 
 ## 📄 Citation
 
-> Rajeev & Pendergrass (In Prep). "Observed spatial scaling of the intensity distribution of rain".
+> Rajeev, Masleyev and Pendergrass (In Prep). "Observed spatial and temporal scaling of the intensity distribution of rain".
