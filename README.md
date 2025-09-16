@@ -1,9 +1,9 @@
-# Spatial scaling of precipitation – Observational Analysis
+# Spatial and temporal scaling of precipitation – Observational Analysis
 
 This repository contains data, code, and analysis for the observation-based component of the study:
-**"Observed spatial scaling of the intensity distribution of rain"**
+**"Observed spatial and temporal scaling of the intensity distribution of rain"**
 
-It focuses on merged satellite-derived precipitation datasets to explore how coarsening spatial resolution influences rainfall amount distributions.
+It focuses on merged satellite-derived precipitation datasets to explore how increasing spatial and temporal resolution influences rain amount distributions.
 
 ## 📂 Folder Structure
 
@@ -26,7 +26,7 @@ conda activate spatial-scaling
 
 ## 📜 Datasets Used
 
-- **IMERG Final Run V07** (0.1° resolution): [GPM NASA Website](https://gpm.nasa.gov/)
+- **IMERG Final Run V07B** (0.1° resolution): [GPM NASA Website](https://gpm.nasa.gov/)
 - **FROGS Database** (1° resolution): [FROGS website](https://frogs.ipsl.fr)
 
 
