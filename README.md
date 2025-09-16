@@ -21,7 +21,7 @@ It focuses on merged satellite-derived precipitation datasets to explore how inc
 git clone https://github.com/akshayrajeev1/scaling-precip-obs.git
 cd precip-resolution-obs
 conda env create -f environment.yml
-conda activate spatial-scaling
+conda activate scaling
 ```
 
 ## 📜 Datasets Used
