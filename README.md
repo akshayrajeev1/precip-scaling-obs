@@ -5,7 +5,7 @@ This repository contains data, code, and analysis for the observation-based comp
 
 It focuses on merged satellite-derived precipitation datasets to explore how increasing spatial and temporal resolution influences rain amount distributions.
 
-## 📂 Folder Structure
+## Folder Structure
 
 ```
 .
@@ -15,7 +15,7 @@ It focuses on merged satellite-derived precipitation datasets to explore how inc
 ├── figs/               # Figures used in the publication
 ```
 
-## 📥 Getting Started
+## Getting Started
 
 ```bash
 git clone https://github.com/akshayrajeev1/scaling-precip-obs.git
@@ -24,13 +24,13 @@ conda env create -f environment.yml
 conda activate scaling
 ```
 
-## 📜 Datasets Used
+## Datasets Used
 
 - **IMERG Final Run V07B** (0.1° resolution): [GPM NASA Website](https://gpm.nasa.gov/)
 - **FROGS Database** (1° resolution): [FROGS website](https://frogs.ipsl.fr)
 
 
-## 📊 Key Analyses
+## Key Analyses
 
 - Spatial coarsening and aggregation
 - Construction of rain amount distribution
@@ -38,6 +38,6 @@ conda activate scaling
 - Estimate the shift in rain rates using the shift mode.
 - Spatial distribution of the shift mode
 
-## 📄 Citation
+## Citation
 
 > Rajeev, Masleyev and Pendergrass (In Prep). "Observed spatial and temporal scaling of the intensity distribution of rain".
