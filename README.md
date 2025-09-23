@@ -1,16 +1,16 @@
-# Spatial scaling of precipitation – Observational Analysis
+# Spatial and temporal scaling of precipitation – Observational Analysis
 
 This repository contains data, code, and analysis for the observation-based component of the study:
-**"Observed spatial scaling of the intensity distribution of rain"**
+**"Observed spatial and temporal scaling of the intensity distribution of rain"**
 
-It focuses on merged satellite-derived precipitation datasets to explore how coarsening spatial resolution influences rainfall amount distributions.
+It focuses on merged satellite-derived precipitation datasets to explore how increasing spatial and temporal resolution influences rain amount distributions.
 
 ## 📂 Folder Structure
 
 ```
 .
 ├── data/               # Processed data for plotting (rain amount distributions, shift map etc.)
-├── notebooks/          # Jupyter notebooks for exploratory analysis and visualization
+├── notebooks/          # Jupyter notebooks for visualization of results
 ├── scripts/            # Python scripts for processing and statistical analysis
 ├── figs/               # Figures used in the publication
 ```
@@ -21,12 +21,12 @@ It focuses on merged satellite-derived precipitation datasets to explore how coa
 git clone https://github.com/akshayrajeev1/scaling-precip-obs.git
 cd precip-resolution-obs
 conda env create -f environment.yml
-conda activate spatial-scaling
+conda activate scaling
 ```
 
 ## 📜 Datasets Used
 
-- **IMERG Final Run V07** (0.1° resolution): [GPM NASA Website](https://gpm.nasa.gov/)
+- **IMERG Final Run V07B** (0.1° resolution): [GPM NASA Website](https://gpm.nasa.gov/)
 - **FROGS Database** (1° resolution): [FROGS website](https://frogs.ipsl.fr)
 
 
@@ -40,4 +40,4 @@ conda activate spatial-scaling
 
 ## 📄 Citation
 
-> Rajeev and Pendergrass (In Prep). "Observed spatial scaling of the intensity distribution of rain".
+> Rajeev, Masleyev and Pendergrass (In Prep). "Observed spatial and temporal scaling of the intensity distribution of rain".
