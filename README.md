@@ -1,6 +1,6 @@
 # Spatial and temporal scaling of precipitation – Observational Analysis
 
-This repository contains data, code, and analysis for the observation-based component of the study:
+This repository contains data, code, and analysis for the observation-based study:
 **"Observed spatial and temporal scaling of the intensity distribution of rain"**
 
 It focuses on merged satellite-derived precipitation datasets to explore how increasing spatial and temporal resolution influences rain amount distributions.
@@ -9,7 +9,7 @@ It focuses on merged satellite-derived precipitation datasets to explore how inc
 
 ```
 .
-├── data/               # Processed data for plotting (rain amount distributions, shift map etc.)
+├── data/               # Processed data for plotting (rain amount distributions, direct modes of change etc.)
 ├── notebooks/          # Jupyter notebooks for visualization of results
 ├── scripts/            # Python scripts for processing and analysis
 ├── figs/               # Figures used in the publication
