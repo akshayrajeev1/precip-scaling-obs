@@ -7,17 +7,18 @@ import xarray as xr
 import numpy as np
 import xesmf as xe
 print ('Starting')
-
-for yr in np.arange(2000,2023): ### Looping over each year
-    HR= xr.open_dataset('/gpm_10km/'+str(yr)+'.nc')  ## Reading in the raw data output from Scrip00 (high-res)
-    LR = xr.open_dataset('/gpm_100km/'+str(yr)+'.nc')  ## Reading in the Low-res data
+high_res=10
+low_res=100
+for yr in np.arange(1998,2023): ### Looping over each year
+    HR= xr.open_dataset('/level01_indata/imerg_'+str(high_res)+'km/'+str(yr)+'.nc')  ## Reading in the raw data output from Scrip00 (high-res)
+    LR = xr.open_dataset('/level01_indata/imerg_nearest/nearest_'+str(high_res)+'km/imerg_'+str(low_res)+'km/*.nc')  ## Reading in the Low-res data
     print ('Data input done for ', str(yr))  
     regridder = xe.Regridder(LR, HR, 'nearest_s2d')
     LRh = regridder(LR)
     print ('Regridding done')
     comp = dict(zlib=True, complevel=5)
     encoding = {var: comp for var in LRh.data_vars}
-    filename_LRh = '/share/cliprelabs/ar942/GPM/gpm_nearest/gpm_100km/'+str(yr)+'.nc' ### Output location
+    filename_LRh = '/level01_indata/imerg_nearest/imerg_'+str(low_res)+'km/'+str(yr)+'.nc' ### Output location
     print ('saving to ', filename_LRh)
     LRh.to_netcdf(path=filename_LRh,encoding=encoding) ### Saving output
     LRh.close()

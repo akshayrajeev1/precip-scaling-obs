@@ -18,8 +18,8 @@ low_res = 100 #100 ## spatial resolution of low res dataset in kilometers
 
 startTime = datetime.now()
 ## Reading in the data (high & low res)
-HR= xr.open_mfdataset('/gpm_'+str(high_res)+'km/*.nc',parallel=False) 
-LR = xr.open_mfdataset('/gpm_'+str(low_res)+'km/*.nc',parallel=False)
+HR= xr.open_mfdataset('/level01_indata/imerg_'+str(high_res)+'km/*.nc',parallel=False) 
+LR = xr.open_mfdataset('/level01_indata/imerg_'+str(low_res)+'km/*.nc',parallel=False)
 HR1=HR.precipitation
 LR1=LR.precipitation
 ## Rearranging the dimensions to a common format
@@ -31,23 +31,23 @@ HR2.load() ## and dechunking should be done at the end when the dataset size inc
 L=2.5e6
 
 def makedists(pdata,binl):
-    ##### This is called from within makeraindist.
+    ##### This is called from within makeraindist. The function is an updated version of the same from Pendergrass & Hartmann, 2014
     ##### Calculate distributions 
-    bins=binl#np.append(0,binl)
+    bins=binl
     # this is the histogram - we'll get frequency from this
     thisn=histogram(pdata,dim=['time'], bins=[bins],block_size=None) 
     #### Calculate the number of days with non-missing data, for normalization
     ndmat=thisn.sum(dim='precipitation_bin')
     thisppdfmap=thisn/ndmat
     #### Iterate back over the bins and add up all the precip - this will be the rain amount distribution
-    testpamtmap=(thisn*thisn.precipitation_bin) ## This method is faster to process for the actual calculation (but will take way longer and more memory) try: #pdata.groupby_bins(pdata,bins).sum(dim='time')  
+    testpamtmap=(thisn*thisn.precipitation_bin) ## This method is faster to process for the actual calculation (but will require more memory if not performed using dask array)
     thispamtmap=testpamtmap/ndmat
     return thisppdfmap,thispamtmap
 
 
-def makeraindist(pdata1,pdata2): 
+def makeraindist(pdata1,pdata2):
+    ### The function is from Pendergrass & Hartmann, 2014
     #### 1. Calculate bin structure. Note, these were chosen based on daily CMIP5 data - if you're doing something else you might want to change it
-    #print('starting...')
     pmax=np.array([pdata1.max(),pdata2.max()]).max()
     #print('pmax calculated')
     maxp=1500;# % choose an arbitrary upper bound for initial distribution, in w/m2
@@ -80,16 +80,10 @@ def makeraindist(pdata1,pdata2):
         binl=np.exp(binllog)/L*3600*24; #%% this is what we'll use to make distributions
         binr=np.exp(binrlog)/L*3600*24;
     bincrates=np.append(0,(binl+binr)/2)# % we'll use this for plotting.
-    #print("bincrates done")
     #### 2. Calculate distributions 
-    #print("Calculating Distributions")
     ppdfmap,pamtmap=makedists(pdata1,bincrates);
-    #del pdata1
-    #print("Distributions Calculated for pdata1 (LR)")
     ppdfmap2,pamtmap2=makedists(pdata2,bincrates);
-    #del pdata2
-    #print("Distributions Calculated for pdata2 (HR)")
-    #### 3. Spatially average distributions (xarray method-1)
+
     
     weight1 = np.cos(np.deg2rad(ppdfmap.lat));weight2 = np.cos(np.deg2rad(ppdfmap2.lat))
     weight1 = weight1/weight1.sum();weight2 = weight2/weight2.sum()
@@ -99,22 +93,6 @@ def makeraindist(pdata1,pdata2):
     weightpa1 = pamtmap.weighted(weight1);weightpa2 = pamtmap2.weighted(weight2)
     pamt1 = weightpa1.mean(("lon", "lat"));pamt2 = weightpa2.mean(("lon", "lat"))
     
-    #### 3. Spatially average distributions (xarray+numpy method-2)
-    # w1=xr.ones_like(ppdfmap[:,:,0])
-    # weight1=np.tile(np.cos(lat1*np.pi/180),(len(lon1),1));
-    # weight1=weight1/weight1.sum()
-    # weightp1=weight1*w1
-    # w2=xr.ones_like(ppdfmap2[:,:,0])
-    # weight2=np.tile(np.cos(lat2*np.pi/180),(len(lon2),1));
-    # weight2=weight2/weight2.sum()
-    # weightp2=weight2*w2
-    # ppdf1=(ppdfmap*weightp1); pamt1=pamtmap*weightp1
-    # ppdf2=(ppdfmap2*weightp2); pamt2=pamtmap2*weightp2
-
-    # ppdf1=ppdf1.sum(dim=['lon','lat'],skipna=True)#np.nansum(np.nansum(ppdfmap*weightp1,axis=0),axis=0)
-    # pamt1=pamt1.sum(dim=['lon','lat'],skipna=True)#np.nansum(np.nansum(pamtmap*weightp1,axis=0),axis=0)
-    # ppdf2=ppdf2.sum(dim=['lon','lat'],skipna=True)#np.nansum(np.nansum(ppdfmap2*weightp2,axis=0),axis=0)
-    # pamt2=pamt2.sum(dim=['lon','lat'],skipna=True)#np.nansum(np.nansum(pamtmap2*weightp2,axis=0),axis=0)
     return ppdf1,pamt1,ppdf2,pamt2,bincrates
 
 
