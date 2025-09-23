@@ -11,7 +11,7 @@ It focuses on merged satellite-derived precipitation datasets to explore how inc
 .
 ├── data/               # Processed data for plotting (rain amount distributions, shift map etc.)
 ├── notebooks/          # Jupyter notebooks for visualization of results
-├── scripts/            # Python scripts for processing and statistical analysis
+├── scripts/            # Python scripts for processing and analysis
 ├── figs/               # Figures used in the publication
 ```
 
