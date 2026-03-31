@@ -6,3 +6,4 @@ __pycache__/
 .envrc
 *.h5
 *.zip
+data/temporal/raw_data/*.nc
