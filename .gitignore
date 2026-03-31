@@ -7,3 +7,4 @@ __pycache__/
 *.h5
 *.zip
 data/temporal/raw_data/*.nc
+data/temporal/cleaned_input/*.pkl
