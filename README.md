@@ -1,7 +1,7 @@
 # Spatial and temporal scaling of precipitation using observations
 
 This repository contains data, code, and analysis for the observation-based study:
-**"Observed spatial and temporal scaling of the intensity distribution of Precipitation"**
+**"Dependence of the precipitation intensity distribution on spatial and temporal resolution in observations"**
 
 It focuses on merged satellite-derived and station-based precipitation datasets to explore how increasing spatial and temporal resolution influences rain amount distributions.
 
@@ -18,8 +18,8 @@ It focuses on merged satellite-derived and station-based precipitation datasets 
 ## Getting Started
 
 ```bash
-git clone https://github.com/akshayrajeev1/scaling-precip-obs.git
-cd precip-resolution-obs
+git clone https://github.com/akshayrajeev1/precip-scaling-obs.git
+cd precip-scaling-obs
 conda env create -f environment.yml
 conda activate scaling
 ```
@@ -28,16 +28,17 @@ conda activate scaling
 
 - **IMERG Final Run V07B** (0.1° resolution): [GPM NASA Website](https://gpm.nasa.gov/)
 - **FROGS Database** (1° resolution): [FROGS website](https://frogs.ipsl.fr)
+- **In-situ observations** (1-minute resolution): [US DOE Atmospheric Radiation Measurement (ARM) program](https://armgov.svcs.arm.gov/data)
 
 
 ## Key Analyses
 
 - Spatial coarsening and temporal aggregation
-- Construction of rain amount distribution
-- Construction of the joint rain amount distribution
-- Estimate the shift in rain rates using the shift mode.
+- Construction of precipitation amount distribution at different spatial and temporal resolutions
+- Construction of the joint precipitation amount distribution at different spatial and temporal resolutions
+- Estimate the shift of the precipitation amount distributions between spatial resolutions using the shift mode
 - Spatial distribution of the shift mode
-- Temporal scaling of precipitation using station data
+- Estimate the shift of the precipitation amount distributions between temporal resolutions using the shift mode.
 
 ## Citation
 
