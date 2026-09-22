@@ -21,7 +21,7 @@ It focuses on merged satellite-derived and station-based precipitation datasets 
 git clone https://github.com/akshayrajeev1/precip-scaling-obs.git
 cd precip-scaling-obs
 conda env create -f environment.yml
-conda activate scaling
+conda activate prec-res
 ```
 
 ## Datasets Used
