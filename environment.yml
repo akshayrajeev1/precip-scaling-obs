@@ -1,123 +1,31 @@
-name: spatial-scaling
+name: prec-res
 channels:
   - conda-forge
-  - defaults
+  - nodefaults
 dependencies:
-  - adlfs
-  - argopy
-  - awscli
-  - black
-  - boto3
-  - bottleneck
-  - cartopy
-  - cf_xarray
-  - cfgrib
-  - cmocean
-  - dask-ml
-  - datashader
-  - descartes
-  - earthaccess
-  - eofs
-  - erddapy
-  - esmpy
-  - fastjmd95
-  - flox
-  - fsspec
-  - gcm_filters
-  - gcsfs
-  - geocube
-  - geopandas
-  - geopy
-  - geoviews-core
-  - gh
-  - gh-scoped-creds
-  - git-lfs
-  - gsw
-  - h5netcdf
-  - h5py
-  - holoviews
-  - hvplot
-  - intake
-  - intake-esm
-  - intake-geopandas
-  - intake-stac
-  - intake-xarray
-  - ipdb
-  - ipykernel
-  - ipyleaflet
-  - ipympl
-  - ipytree
-  - ipywidgets
-  - jupyter-panel-proxy
-  - jupyter-resource-usage
-  - jupyterlab-git
-  - jupyterlab-lsp
-  - jupyterlab-myst
-  - jupyterlab_code_formatter
-  - kerchunk
-  - line_profiler
-  - lonboard
-  - lxml
-  - lz4
-  - matplotlib-base
-  - memory_profiler
-  - metpy
-  - nb_conda_kernels
-  - nbstripout
-  - nc-time-axis
-  - netcdf4
-  - numbagg
-  - numcodecs
-  - numpy_groupies
-  - odc-stac
-  - panel
-  - param
-  - parcels
-  - pop-tools
-  - pyarrow
-  - pycamhd
-  - pydap
-  - pystac
-  - pystac-client
-  - python-blosc
-  - python-gist
-  - python-graphviz
-  - python-lsp-ruff
-  - python-xxhash
-  - rasterio
-  - rechunker
-  - rio-cogeo
-  - rioxarray
-  - ruff
-  - s3fs
-  - satpy
-  - scikit-image
-  - scikit-learn
-  - scipy
-  - seaborn
-  - snakeviz
-  - sparse
-  - stackstac
-  - tiledb-py
-  - timezonefinder
-  - watermark
-  - xarray-datatree
-  - xarray-spatial
-  - xarray_leaflet
-  - xarrayutils
-  - xbatcher
-  - xclim
-  - xesmf
-  - xgboost
-  - xgcm
-  - xhistogram
-  - xmip
-  - xmitgcm
-  - xpublish
-  - xrft
-  - xskillscore
-  - xxhash
-  - zarr
+  - python=3.11
+
+  # Core
   - numpy
   - pandas
+
+  # Gridded data
   - xarray
+  - rioxarray
+  - xesmf
+  - xhistogram
+  - dask
+  - distributed
+
+  # I/O backends for xarray
+  - netcdf4
+  - h5netcdf
+
+  # Plotting
+  - matplotlib
+  - seaborn
+  - cartopy
+
+  # Notebooks
+  - jupyterlab
+  - ipykernel
