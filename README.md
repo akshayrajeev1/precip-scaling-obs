@@ -42,4 +42,4 @@ conda activate prec-res
 
 ## Citation
 
-> Rajeev, Masleyev and Pendergrass (In Prep). "Observed spatial and temporal scaling of the intensity distribution of precipitation".
+> Rajeev, Masleyev and Pendergrass (In Prep). "Dependence of the precipitation intensity distribution on spatial and temporal resolution in observations".
